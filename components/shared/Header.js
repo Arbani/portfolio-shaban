@@ -8,15 +8,8 @@ class Header extends  React.Component {
 
   render() {
 
-    //debugger;
-    //const title = this.props.title;
-
     return (
       <React.Fragment>
-        {/*<p> { title } </p>*/}
-        {/*{this.props.children}*/}
-        <p className="customClass"> I am styled P element </p>
-        <p className="customClassFromFile"> I am styled P element </p>
         <Link href="/">
           <a style={{ 'fontSize' : '20px' }}> Home </a>
         </Link>
