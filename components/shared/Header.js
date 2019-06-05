@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import '../../styles/main.scss';
+
 
 class Header extends  React.Component {
 
