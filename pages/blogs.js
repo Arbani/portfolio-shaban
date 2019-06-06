@@ -18,5 +18,4 @@ class Blogs extends React.Component {
 }
 
 
-
 export default Blogs;
