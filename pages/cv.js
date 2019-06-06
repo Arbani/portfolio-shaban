@@ -1,5 +1,6 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
+import BasePage from '../components/BasePage';
 
 
 class Cv extends React.Component {
@@ -8,7 +9,9 @@ class Cv extends React.Component {
 	render() {
 		return (
 			<BaseLayout>
-				<h1>I am Cv Page </h1>
+        <BasePage>
+					<h1>I am Cv Page </h1>
+				</BasePage>
 			</BaseLayout>
 		)
 	}

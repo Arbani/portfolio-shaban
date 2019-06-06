@@ -1,51 +1,5 @@
-// import React from 'react';
-// import Link from 'next/link';
-//
-//
-//
-// class Header extends  React.Component {
-//
-//
-//   render() {
-//
-//     return (
-//       <React.Fragment>
-//         <Link href="/">
-//           <a style={{ 'fontSize' : '20px' }}> Home </a>
-//         </Link>
-//         <Link href="/about">
-//           <a> About </a>
-//         </Link>
-//         <Link href="/portfolios">
-//           <a> Portfolio </a>
-//         </Link>
-//         <Link href="/blogs">
-//           <a> Blog </a>
-//         </Link>
-//         <Link href="/cv">
-//           <a> CV </a>
-//         </Link>
-//         <style jsx>{`
-//
-//         a {
-//           font-size: 20px;
-//         }
-//
-//         .customClass {
-//           color: red;
-//         }
-//
-//       `}</style>
-//       </React.Fragment>
-//     )
-//   }
-// }
-//
-// export default Header;
-
-
-
 import React from 'react';
+import Link from 'next/link';
 import {
   Collapse,
   Navbar,
@@ -53,11 +7,18 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink
+} from 'reactstrap';
+
+const BsNavLink = (props) => {
+  const { route, title } = props;
+
+  return (
+  <Link href={route}>
+    <a className="nav-link port-navbar-link"> {title} </a>
+  </Link>
+  )
+}
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -76,34 +37,26 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Shaban Kaculi</NavbarBrand>
+        <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+          <NavbarBrand className="port-navbar-brand" href="/">Shaban Kaculi</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/" title="Home"/>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavItem  className="port-navbar-item">
+                <BsNavLink route="/about" title="About"/>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem  className="port-navbar-item">
+                <BsNavLink route="/portfolios" title="Portfolio"/>
+              </NavItem>
+              <NavItem  className="port-navbar-item">
+                <BsNavLink route="/blogs" title="Blog"/>
+              </NavItem>
+              <NavItem  className="port-navbar-item">
+                <BsNavLink route="/cv" title="Cv"/>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
